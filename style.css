@@ -1,0 +1,81 @@
+@font-face {
+    font-family: carip ;
+    src: url(/Website/CssStyle/Capriola-Regular.ttf);
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(168, 167, 164, 0);
+  }
+
+
+body {
+    background-color: rgba(255, 255, 255, 0.011);
+}
+
+
+  #JumpStart {
+    transition: color 1s ease-in-out;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-family: carip ;
+    
+  }
+
+  #JumpStart:hover{
+    transition: color 0.3s ease-in-out;
+    color: rgb(246, 0, 0);
+    font-size: 20px;
+    animation: glitch 0.2s 0.09s;
+    font-family: carip ;
+    background-color: rgba(177, 177, 177, 0.196);
+    border-radius: 2px;
+  }
+
+  @keyframes glitch{
+    0% {
+        color: red;
+        transform: translateX(0);
+      }
+      20%{
+        color: red;
+        transform: translateX(-5px)translateY(-2px);
+      }
+      40% {
+        color: red;
+        transform: translateX(5px)translateY(-2px);
+      }
+      60% {
+        color: red;
+        transform: translateX(-3px)translateY(2px);
+      }
+      80% {
+        transform: translateX(3px)translateY(2px);
+      }
+      100% {
+        transform: translateX(0)translateY(0px);
+      }
+      0% {
+        background-color: #000; /* Start with black */
+      }
+      25% {
+        background-color: #ff00007f; /* Change to red */
+      }
+      50% {
+        background-color: #2e0101; /* Back to black */
+      }
+      75% {
+        background-color: #ff00007f; /* Change to red */
+      }
+      100% {
+        background-color: #000; /* End with black */
+      }
+  }
+
