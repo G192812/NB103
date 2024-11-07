@@ -1,157 +1,20 @@
-<!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nando</title>
     <style>
-        body {
-            margin: 0;
-            background-color: #000000;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .glow-box {
-            background-color: rgba(30, 30, 30, 0.9);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
-            width: 400px;
-            text-align: center;
-            color: #ffffff;
-            position: relative;
-            z-index: 1;
-        }
-
-        .glow-box:hover {
-            background-color: rgba(30, 30, 30, 0.9);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
-            width: 400px;
-            text-align: center;
-            color: #ffffff;
-            position: relative;
-            z-index: 1;
-            animation: boxglow ease-in-out 4s infinite;
-        }
-
-        
-
-
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: fall linear forwards, glow 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            }
-            100% {
-                box-shadow: 0 0 60px rgba(255, 255, 255, 1);
-            }
-        }
-
-
-        @keyframes boxglow {
-            0% {
-                box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
-                background-color: rgba(30, 30, 30, 0.9);
-            }
-            50% {
-                box-shadow: 0 0 30px rgba(17, 40, 141, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
-                background-color: rgba(30, 30, 30, 0.185);
-            }
-
-            100% {
-                box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
-                background-color: rgba(30, 30, 30, 0.9);
-            }
-        }
-
-
     </style>
 </head>
 <body>
-    <div class="container" id="snowContainer">
-        <div class="glow-box">
-            <h1>A very cold night!</h1>
-            <p>-nando</p>
-        </div>
+    <div class="Container">
+        <button>
+            <span>
+                start
+            </span>
+        </button> 
     </div>
-
-    <script>
-        const snowflakes = [];
-
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            const xPosition = Math.random() * 100;
-            const size = Math.random() * 10 + 5;
-            const animationDuration = Math.random() * 5 + 8;
-
-            snowflake.style.left = `${xPosition}vw`;
-            snowflake.style.width = `${size}px`;
-            snowflake.style.height = `${size}px`;
-            snowflake.style.backgroundColor = `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.5})`;
-            snowflake.style.animationDuration = `${animationDuration}s`;
-            snowflake.style.animationName = 'fall';
-
-            snowflake.style.animationName += ', glow';
-
-            document.getElementById('snowContainer').appendChild(snowflake);
-            snowflakes.push(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-                snowflakes.splice(snowflakes.indexOf(snowflake), 1);
-            }, (animationDuration + 1) * 1000);
-        }
-
-        setInterval(createSnowflake, 300);
-
-        function createBackgroundSnowflake() {
-            const backgroundSnowflake = document.createElement('div');
-            backgroundSnowflake.classList.add('snowflake');
-
-            const xPosition = Math.random() * 100;
-            const size = Math.random() * 20 + 10;
-            const animationDuration = Math.random() * 10 + 5;
-
-            backgroundSnowflake.style.left = `${xPosition}vw`;
-            backgroundSnowflake.style.width = `${size}px`;
-            backgroundSnowflake.style.height = `${size}px`;
-            backgroundSnowflake.style.backgroundColor = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.2})`;
-            backgroundSnowflake.style.animationDuration = `${animationDuration}s`;
-            backgroundSnowflake.style.animationName = 'fall';
-
-            document.getElementById(' snowContainer').appendChild(backgroundSnowflake);
-
-            setTimeout(() => {
-                backgroundSnowflake.remove();
-            }, (animationDuration + 1) * 1000);
-        }
-        setInterval(createBackgroundSnowflake, 1000);
-    </script>
 </body>
 </html>
