@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complex Snowing Effect with Glowing Background</title>
+    <title>Nando</title>
     <style>
         body {
             margin: 0;
@@ -25,7 +25,7 @@
             background-color: rgba(30, 30, 30, 0.9);
             border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3); /* Glowing effect */
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
             width: 400px;
             text-align: center;
             color: #ffffff;
@@ -33,11 +33,27 @@
             z-index: 1;
         }
 
+        .glow-box:hover {
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
+            width: 400px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+            animation: boxglow ease-in-out 4s infinite;
+        }
+
+        
+
+
         .snowflake {
             position: absolute;
             top: -10px;
             border-radius: 50%;
-            opacity: 0.2;
+            opacity: 0.3;
             animation: fall linear forwards, glow 1.5s ease-in-out infinite alternate;
         }
 
@@ -55,13 +71,32 @@
                 box-shadow: 0 0 60px rgba(255, 255, 255, 1);
             }
         }
+
+
+        @keyframes boxglow {
+            0% {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
+                background-color: rgba(30, 30, 30, 0.9);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(17, 40, 141, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
+                background-color: rgba(30, 30, 30, 0.185);
+            }
+
+            100% {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
+                background-color: rgba(30, 30, 30, 0.9);
+            }
+        }
+
+
     </style>
 </head>
 <body>
     <div class="container" id="snowContainer">
         <div class="glow-box">
-            <h1>Welcome to the Snowy Night</h1>
-            <p>Enjoy the beautiful falling snowflakes!</p>
+            <h1>A very cold night!</h1>
+            <p>-nando</p>
         </div>
     </div>
 
